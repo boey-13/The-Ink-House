@@ -1,0 +1,94 @@
+:root {
+    /* Define color variables for easy theme management */
+    --pink: #8d6262;
+    --dark-bg: #333;
+    --light-bg: #fff;
+    --text-color: #333;
+    --text-secondary: #999;
+    --error-color: #d9534f;
+    --background: #f7f7f7;
+}
+
+* {
+    /* Reset and standardize styles across elements */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Verdana, Geneva, Tahoma, sans-serif;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html {
+    /* Set base font size for improve scrolling behavior */
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+}
+
+body {
+    /* Define the body styling, including margin, background, and text color */
+    margin: 0;
+    margin-top: 3rem;
+    padding: 0;
+    background: #fff;
+    position: relative;
+    color: var(--text-color);
+}
+
+.abanner {
+    /* Styling for the banner section to make it centered and visually appealing */
+    display: flex;
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center content */
+    min-height: 30vh;
+    background: url(../style/banner/about.png) no-repeat center center;
+    background-size: cover;
+    background-blend-mode: overlay;
+    margin-top: 7rem;
+}
+
+.abanner .content {
+    /* Ensure banner text is centered and visible against the background */
+    text-align: center;
+    color: #fff;
+}
+
+.abanner .content h3 {
+    /* Large, prominent heading within the banner */
+    font-family: "Playfair Display", serif;
+    font-size: 4.5rem;
+    margin: 0; /* Remove default margin */
+}
+
+.about-section {
+    /* General layout and styling for the about section content */
+    width: 80%;
+    margin: 50px auto;
+    color: #333;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.about-section p {
+    /* Paragraph styling within the about section */
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+
+.about-images {
+    /* Flexbox layout to evenly space images in the about section */
+    display: flex;
+    justify-content: space-around;
+    margin: 30px 0;
+}
+
+.about-images img {
+    /* Image styling within the about section, including size and border radius */
+    max-width: 45%;
+    border-radius: 5px;
+}

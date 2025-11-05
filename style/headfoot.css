@@ -1,0 +1,430 @@
+:root {
+    --pink: #8d6262;
+}
+
+/* Header styling to create a fixed, top-of-page navigation */
+header {
+    position: fixed; /* Keeps header at the top of the page */
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    padding: 1.5rem 5%;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    z-index: 1100; /* Increase this value to ensure it's above the cart-sidebar */
+    box-shadow: 0 .3rem .7rem rgba(0, 0, 0, .1); 
+}
+
+
+
+/* Styling for the logo inside the header */
+header .logo img {
+    max-height: 5rem; 
+    width: auto; 
+    display: block;
+}
+
+/* Main section within the header for flexible alignment */
+header .header-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Navbar styling for navigation menu items */
+header .navbar {
+    display: flex;
+    align-items: center;
+}
+
+/* Styling for individual menu items in the navbar */
+header .navbar .main-menu {
+    list-style-type: none; 
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+}
+
+header .navbar .menu-item {
+    position: relative; /* For positioning dropdown menus */
+}
+
+/* Styling for links in the navbar */
+header .navbar .menu-item a {
+    font-size: 1.8rem; 
+    color: #666;
+    padding: 1rem;
+    display: block;
+    text-decoration: none;
+}
+
+/* Hover effect for menu items */
+header .navbar .menu-item a:hover {
+    color: var(--pink);
+    text-decoration: underline; 
+}
+
+/* Styling for dropdown menus */
+header .navbar .dropdown {
+    position: absolute; /
+    top: 100%; 
+    left: 0;
+    background: #fff;
+    min-width: 180px; 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+    z-index: 1000; /* Ensure dropdown is on top */
+    display: none; /* Hide dropdown initially */
+    padding: 0.5rem 0;
+    border-radius: 5px; 
+}
+
+/* Styling for items within dropdown menus */
+header .navbar .dropdown li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Dropdown links styling */
+header .navbar .dropdown li a {
+    padding: 0.8rem 1.5rem;
+    color: #666;
+    display: block;
+    text-decoration: none;
+    font-size: 1.4rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect for dropdown links */
+header .navbar .dropdown li a:hover {
+    background-color: var(--pink);
+    color: white;
+}
+
+/* Show dropdown on hover */
+header .navbar .menu-item:hover .dropdown {
+    display: block;
+}
+
+/* Styling for icons (like social media icons) in the header */
+header .icons {
+    display: flex;
+    align-items: center;
+}
+
+/* Styling individual icons in the header */
+header .icons a {
+    font-size: 2.5rem; 
+    color: #333;
+    margin-left: 2rem; 
+    text-decoration: none;
+}
+
+/* Hover effect for icons */
+header .icons a:hover {
+    color: var(--pink);
+}
+
+/* User menu dropdown styling */
+.user-menu {
+    position: relative;
+    display: inline-block;
+}
+
+/* Styling for dropdown menu inside the user menu */
+.user-menu .dropdown-menu {
+    display: none; 
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px; 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+    z-index: 1000;
+    padding: 0.5rem 0;
+}
+
+/* Styling for items within the user dropdown menu */
+.user-menu .dropdown-menu li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Styling links inside the user dropdown */
+.user-menu .dropdown-menu li a {
+    padding: 0.8rem 1.5rem;
+    color: #666;
+    display: block;
+    text-decoration: none;
+    font-size: 1.4rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect for user dropdown links */
+.user-menu .dropdown-menu li a:hover {
+    background-color: var(--pink);
+    color: white;
+}
+
+/* Show the dropdown when the user menu is hovered */
+.user-menu:hover .dropdown-menu {
+    display: block;
+}
+
+/* Mobile menu toggle button styling */
+header #toggler {
+    display: none;
+}
+
+/*Here is the CSS for the header and footer, which is also common to all pages, 
+so that all headers and footers are consistent. In addition, reponsive design is also added here, 
+which is to use media to put the header navigation bar into the toggler. 
+When the page is reduced to the size of a mobile phone, the navigation bar can be found through the toggler. 
+This is very friendly for users using small devices or users who want to use split screen.*/
+
+/* Styling for the mobile menu toggle icon) */
+header .fa-bars {
+    font-size: 2.5rem;
+    color: #333;
+    border-radius: .3rem;
+    padding: .4rem 1rem;
+    cursor: pointer;
+    border: .1rem solid rgba(0, 0, 0, .3);
+    display: none; /* Hidden on larger screens */
+}
+
+
+/* Container for the dropdown */
+#suggestion {
+	margin-left: 5px;
+	margin-right: 5px;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ddd;
+	max-width: 200px;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1000;
+    width: 100%;
+    display: none; 				/* Hide initially, show when there are suggestions */
+}
+
+/* Individual suggestion items */
+#suggestion p {
+    margin: 0;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+/* Hover effect for suggestions */
+#suggestion p:hover {
+    background-color: #f0f0f0;
+}
+
+/* Style for the input text area */
+#search {
+	margin-left: 5px;
+	margin-right: 5px;
+    border-radius: 100px;
+	background-color: #f7f5f5;
+    padding: 5px 10px;
+    width: 200px;
+	height: 27px;
+    box-sizing: border-box; /* Ensures padding is included in the total width */
+    font-size: 10px;
+    transition: border-color 0.3s ease; 
+}
+
+/* Highlight the border when the input is focused */
+#search:focus {
+    outline: none; 
+    box-shadow: 0 0 5px rgba(201, 187, 187, 09);
+	backgroud-color: #f0f0f0;
+}
+
+.icons i {
+    font-size: 14px; 
+}
+
+.highlight {
+    font-weight: bold;
+}
+
+
+
+
+/* Footer styling with a slight shadow effect */
+.footer {
+    background-color: #f0f0f0;
+    padding: 2rem 9%;
+    margin-top: 5rem;
+    box-shadow: 0 -0.3rem 0.7rem rgba(0, 0, 0, 0.1);
+}
+
+/* Footer container for different content sections */
+.footer .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+/* Individual box styling within the footer */
+.footer .box-container .box {
+    flex: 1 1 25rem;
+}
+
+/* Footer section titles */
+.footer .box-container .box h3 {
+    color: #333;
+    font-size: 2rem;
+    padding: 1rem 0;
+}
+
+/* Footer links styling */
+.footer .box-container .box a {
+    display: block;
+    color: #666;
+    font-size: 1rem;
+    padding: 1rem 0;
+}
+
+/* Hover effect for footer links */
+.footer .box-container .box a:hover {
+    color: var(--pink);
+    text-decoration: underline;
+}
+
+/* Social media icons inside footer */
+.footer .box-container .box .social-media img {
+    width: 80%;
+    margin-top: 1rem;
+}
+
+/* Social media section styling in the footer */
+.social-media {
+    display: flex;
+    justify-content: left;
+}
+
+/* Individual social media icon styling */
+.footer .box-container .box .social-icon {
+    height: 46px;
+    width: 46px;
+    border: 1px solid #333;
+    margin: 0 0.45rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    font-size: 1.5rem;
+    border-radius: 50%; 
+}
+
+/* Hover effect for social media icons */
+.footer .box-container .box .social-icon:hover {
+    color: #8d6262;
+    border-color: #8d6262;
+}
+
+/* Footer credit text styling */
+.footer .credit {
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    padding-top: 2.5rem;
+    font-size: 1.5rem;
+    color: #333;
+    border-top: .1rem solid rgba(0, 0, 0, .1);
+}
+
+.footer .credit span {
+    color: var(--pink);
+}
+
+
+
+/* Media queries for responsive design adjustments */
+
+/* Adjustments for screen width 991px and below */
+@media (max-width:991px) {
+    html {
+        font-size: 55%; 
+    }
+    
+    header {
+        padding: 2rem; 
+    }
+    
+    section {
+        padding: 2rem; 
+    }
+}
+
+/* Adjustments for screen width 768px and below */
+@media (max-width: 768px) {
+    html .fa-bars {
+        display: block; /* Show hamburger menu on smaller screens */
+    }
+
+    /* Navbar becomes a dropdown on mobile */
+    header .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #eee;
+        border-top: .1rem solid rgba(0, 0, 0, .1);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); 
+        transition: clip-path 0.3s ease-in-out, max-height 0.3s ease-in-out; /* Smooth dropdown transition */
+        z-index: 999;
+        overflow: hidden; 
+        max-height: 0; /* Initially hide dropdown */
+    }
+
+    /* Show navbar dropdown when toggled */
+    header #toggler:checked ~ .navbar {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        max-height: 300px; /* Expanded height for mobile dropdown */
+    }
+
+    /* Mobile navbar link styling */
+    header .navbar a {
+        margin: 0.5rem 0;
+        padding: 1.5rem;
+        background: #fff;
+        border: .1rem solid rgba(0, 0, 0, .1);
+        display: block;
+        font-size: 1.6rem;
+        text-align: center;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .icons-container .icons h3 {
+        font-size: 2rem;
+    }
+
+    .icons-container .icons span {
+        font-size: 1.7rem;
+    }
+}
+
+/* Additional adjustments for very small screens (450px and below) */
+@media (max-width:450px) {
+    html {
+        font-size: 50%; 
+    }
+    
+    .heading {
+        font-size: 3rem; 
+    }
+}
+
+

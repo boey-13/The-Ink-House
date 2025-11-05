@@ -1,0 +1,211 @@
+	:root {
+    /* Define color variables for consistent theming throughout the site */
+    --pink: #8d6262;
+    --dark-bg: #333;
+    --light-bg: #fff;
+    --text-color: #333;
+    --text-secondary: #999;
+    --error-color: #d9534f;
+    --background: #f7f7f7;
+}
+
+* {
+    /* Apply basic styling resets and set up a global font */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Verdana, Geneva, Tahoma, sans-serif;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html {
+    /* Set up basic HTML properties for consistent layout */
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+}
+
+body {
+	font-family: 'Poppins', Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    align-items: flex-start;
+    margin-top: 100px; /* Adjust this value based on the height of your header */
+}
+
+
+
+.form-section {
+	width: 50%;
+	box-sizing: border-box;
+	padding: 20px;
+	background: white;
+	border-radius: 8px;
+	overflow-y: auto;
+}
+
+input, select {
+	width: 100%;
+	padding: 15px;
+	margin: 5px 0;
+	box-sizing: border-box;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+}
+
+.btn {
+	background-color: #333;
+	color: white;
+	padding: 15px;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	width: 100%;
+	margin-top: 10px;
+}
+
+.btn:hover {
+	background-color: #8d6262;
+}
+
+label {
+	font-weight: bold;
+	margin-top: 10px;
+	display: block;
+}
+
+.row {
+	display: flex;
+	justify-content: space-between;
+	gap: 10px;
+	margin-bottom: 10px;
+}
+
+.col-50 {
+	width: 48%; /* Makes both fields occupy half of the row */
+}
+
+h3 {
+	margin-bottom: 10px; /* Reduced margin */
+}
+
+.cart-sidebar {
+    width: 45%;
+    position: sticky;
+    top: 90px; /* Adjust this based on your header height */
+    max-height: calc(100vh - 150px); /* Maximum height to avoid overlapping the footer */
+    box-sizing: border-box;
+    padding: 20px;
+    background: #f8f8f8;
+    border-radius: 8px;
+    overflow-y: auto;
+    z-index: 1050; /* Ensure this is higher than the header's z-index */
+}
+
+
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1040; /* Ensure this is higher than the header but lower than the sidebar */
+    display: none; /* Initially hidden */
+}
+
+
+
+.product-item {
+	display: flex;
+	align-items: center;
+	margin-bottom: 15px;
+	border-bottom: 1px solid #e0e0e0;
+	padding-bottom: 10px;
+}
+
+.product-image {
+	width: 100px;
+	height: 100px;
+	object-fit: cover;
+	border-radius: 5px;
+	margin-right: 15px;
+}
+
+.product-info {
+	flex-grow: 1;
+}
+
+.product-name {
+	font-weight: bold;
+	margin: 0 0 5px 0;
+}
+
+.product-variant {
+	color: grey;
+	font-size: 12px;
+}
+
+.product-price {
+	font-size: 1.3rem;
+	font-weight: bold;
+	white-space: nowrap;
+}
+
+.summary-item {
+	font-size: 1.3rem;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 10px;
+}
+
+.total-amount {
+	font-weight: bold;
+}
+
+.error-message {
+	display: none;
+	color: red;
+	font-size: 12px;
+}
+
+.show-errors input:invalid + .error-message,
+.show-errors select:invalid + .error-message {
+	display: block;
+}
+
+p{
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	color: grey;
+	font-size: 15px;
+}
+.spinner{
+	display: none;
+	width: 15px;
+	height: 15px;
+	border: 2px solid rgba(0,0,0,0.1);
+	border-radius: 50%;
+	border-left-color: #e4a6a8;
+	animation: spin 1s linear infinite;
+	margin-right: 5px;
+	vertical-align: middle;
+}
+@keyframes spin{
+	to{transform: rotate(360deg);}
+}

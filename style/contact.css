@@ -1,0 +1,190 @@
+/*Here is the CSS of contactus.php. Here we also put an image in the background, 
+and then frame the contact us form and contact info separately, which can increase the visual sense of users.*/
+
+:root {
+    /* Define color variables for consistent theming throughout the site */
+    --pink: #8d6262;
+    --dark-bg: #333;
+    --light-bg: #fff;
+    --text-color: #333;
+    --text-secondary: #999;
+    --error-color: #d9534f;
+    --background: #f7f7f7;
+}
+
+* {
+    /* Apply basic styling resets and set up a global font */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Verdana, Geneva, Tahoma, sans-serif;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html {
+    /* Set up basic HTML properties for consistent layout */
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+}
+
+body {
+    /* Main body styling including background, color, and margin management */
+    margin: 0;
+    margin-top: 8rem;
+    padding: 0;
+    background: var(--background);
+    position: relative; /* Set for use with pseudo-elements */
+    color: var(--text-color); /* Ensure text stands out against background */
+}
+
+body::before {
+    /* Apply a background image with a dark overlay across the entire body */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../style/banner/background3.png') no-repeat center center fixed; /* Background image path */
+    background-size: cover;
+    z-index: -1; /* Ensure the background stays behind other content */
+    opacity: 0.6; /* Dim the background for better contrast with text */
+    background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent black overlay */
+}
+
+.contact-section {
+    /* Layout and styling for the main contact section */
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 3rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.form-container {
+    /* Styling for the form container, ensuring it's responsive and visually distinct */
+    flex: 1 1 45%;
+    padding: 2rem;
+    background: var(--light-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-right: 1rem; /* Add margin to separate from adjacent elements */
+}
+
+.info-container {
+    /* Styling for the contact info container */
+    flex: 1 1 45%;
+    padding: 2rem;
+    background: var(--light-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-left: 1rem; /* Add margin to separate from adjacent elements */
+}
+
+h1, h2 {
+    /* General heading styles for consistent typography */
+    font-size: 3rem;
+    color: var(--text-color);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+h2 {
+    /* Additional spacing for h2 elements to create separation */
+    margin-top: 3rem;
+}
+
+.contact-section p {
+    /* Paragraph styling within the contact section */
+    font-size: 1.6rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.contact-section p i {
+    /* Icon styling within paragraphs to match the theme */
+    color: var(--pink);
+    margin-right: 1rem;
+}
+
+.form-container form label {
+    /* Styling for form labels to ensure readability */
+    font-size: 1.6rem;
+    color: var(--text-color);
+    display: block;
+}
+
+.form-container form input[type="text"],
+.form-container form input[type="email"],
+.form-container form select,
+.form-container form textarea {
+    /* Input fields styling for a clean and modern form appearance */
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background: #f9f9f9;
+}
+
+.form-container form textarea {
+    /* Specific styling for textareas to set a consistent height */
+    height: 10rem;
+    resize: none;
+}
+
+.form-container form .error {
+    /* Error message styling for form validation */
+    color: var(--error-color);
+    font-size: 1.4rem;
+    margin-top: -.5rem;
+}
+
+.form-container form button[type="submit"] {
+    /* Styling for the submit button to make it prominent */
+    background-color: var(--dark-bg);
+    color: #fff;
+    padding: 1rem 3rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.6rem;
+    margin-top: 2rem;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-container form button[type="submit"]:hover {
+    /* Hover effect for the submit button */
+    background-color: var(--pink);
+}
+
+.contact-details {
+    /* Centered text styling for contact details */
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.contact-image {
+    /* Ensure images in the contact section are spaced and centered */
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.contact-image img {
+    /* Image styling to make sure they fit well within their containers */
+    width: 100%;
+    max-width: 300px;
+    margin-top: 1rem;
+}

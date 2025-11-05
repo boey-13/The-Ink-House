@@ -1,0 +1,281 @@
+
+/*This part of CSS is for login index.php. This part cooperates with app.js to make the login page dynamic. 
+For example, we added a panel-container in php, used CSS to style it in the desired position and create a large circle on the back, 
+and then cooperated with app.js. When the user clicks the corresponding button, it can dynamically switch between sign up and sign in form. 
+In addition, we use CSS to add a body background image, and also use border radius to make the form rounded. 
+CSS increases the user's visual sense, and js increases the user's sense of interaction.*/
+
+/* Reset default styles for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set the font family for body and input elements */
+body, input {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Set the background image and blending mode for the body */
+body {
+    background-color: rgba(0, 0, 0, 0.2); 
+    background-image: url('../style/banner/background.png'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-blend-mode: overlay; 
+}
+
+/* Main container for the form, with a grid layout */
+.container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: transparent;
+    overflow: hidden;
+    display: grid;
+}
+
+/* Creates a large circular background element with a gradient */
+.container:before {
+    content: '';
+    position: absolute;
+    width: 2500px;
+    height: 2500px;
+    border-radius: 50%;
+    background: linear-gradient(-45deg, rgba(141, 98, 98, 0.8), rgba(174, 131, 131, 0.8));
+    top: -10%;      
+    right: 48%;
+    transform: translateY(-50%);
+    z-index: 6;
+    transition: 1.8s ease-in-out;
+}
+
+/* Container for the sign-in and sign-up forms */
+.forms-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+/* Position and style the form area for sign-in and sign-up forms */
+.signin-signup {
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    display: grid;
+    grid-template-columns: 1fr;
+    z-index: 5;
+    transition: 1s 0.7s ease-in-out;
+}
+
+/* Common form styling for both sign-in and sign-up forms */
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    transition: 0.2s 0.7s ease-in-out;
+}
+
+form.sign-in-form {
+    z-index: 2;
+    /* Ensure sign-in form is on top initially */
+}
+
+form.sign-up-form {
+    z-index: 1;
+    opacity: 0;
+    /* Hide sign-up form initially */
+}
+
+/* Title styling for forms */
+.title {
+    font-size: 3rem;
+    color: black;	   
+    margin-bottom: 10px;
+}
+
+/* Styling for input fields */
+.input-field {
+    max-width: 400px;
+    width: 100%;
+    height: 55px;
+    background-color: #f0f0f0;
+    margin: 10px 0;
+    border-radius: 55px;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    padding: 0 .4rem;
+}
+
+/* Icon inside input fields */
+.input-field i {
+    text-align: center;
+    line-height: 55px;
+    color: #acacac;
+    font-size: 1.1rem;
+}
+
+/* Input field styling */
+.input-field input {
+    background: none;
+    outline: none;
+    border: none;
+    line-height: 1;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+/* Placeholder text styling */
+.input-field input::placeholder {
+    color: #aaa;
+    font-weight: 500;
+}
+
+/* Button styling */
+.btn {
+    width: 150px;
+    height: 55px;
+    border: none;
+    outline: none;
+    border-radius: 49px;
+    cursor: pointer;
+    background-color: #AE8383;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 10px 0;
+    transition: .5s;
+}
+
+.btn:hover {
+    background-color: #8d6262;
+}
+
+/* Panels for the form animation */
+.panels-container {
+    position: absolute;
+    width: 100%;
+    height:100%;
+    top: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+/* Individual panel styling */
+.panel {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    text-align: center;
+    z-index: 7;
+}
+
+/* Left panel styling */
+.left-panel {
+    pointer-events: all;
+    padding: 3rem 17% 2rem 12%;
+}
+
+/* Right panel styling */
+.right-panel {
+    pointer-events: none;
+    padding: 3rem 12% 2rem 17%;
+}
+
+/* Image styling inside the panel */
+.image {
+    width: 80%;
+    transition: 1.1s .4s ease-in-out;
+}
+
+/* Content styling inside the panel */
+.panel .content {
+    color: #fff;
+    transition: .9s .6s ease-in-out;
+}
+
+/* Panel heading styling */
+.panel h3 {
+    font-weight: 600;
+    line-height: 1;
+    font-size: 3rem;
+}
+
+/* Panel paragraph styling */
+.panel p {
+    font-size: 0.95rem;
+    padding: 1.5rem 0;
+}
+
+/* Transparent button styling */
+.btn.transparent {
+    margin: 0;
+    border: 2px solid #fff;
+    background: none;
+    width: 130px;
+    height: 60px;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+/* Animation for right panel content */
+.right-panel .content, .right-panel .image {
+    transform: translateX(800px);
+} 
+
+/* Styling for sign-up mode in the container */
+.container.sign-up-mode:before {
+    transform: translate(100%, -50%);
+    right: 52%;
+}
+	
+/* Animation for left panel content in sign-up mode */
+.container.sign-up-mode .left-panel .image, 
+.container.sign-up-mode .left-panel .content {
+    transform: translateX(-800px);
+}
+
+/* Reveal right panel content in sign-up mode */
+.container.sign-up-mode .right-panel .content,
+.container.sign-up-mode .right-panel .image {
+    transform: translateX(0px);
+}
+
+/* Disable pointer events for the left panel in sign-up mode */
+.container.sign-up-mode .left-panel {
+    pointer-events: none;
+}
+
+/* Enable pointer events for the right panel in sign-up mode */
+.container.sign-up-mode .right-panel {
+    pointer-events: all;
+}
+
+/* Move form container to the left in sign-up mode */
+.container.sign-up-mode .signin-signup {
+    left: 25%;
+}
+
+/* Hide sign-in form in sign-up mode */
+.container.sign-up-mode form.sign-in-form {
+    z-index: 1;
+    opacity: 0;
+}
+
+/* Show sign-up form in sign-up mode */
+.container.sign-up-mode form.sign-up-form {
+    z-index: 2;
+    opacity: 1;
+}

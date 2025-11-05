@@ -1,0 +1,193 @@
+	/*This part of the CSS is for viewprofile.php. 
+Here, the background is added with an image and the photo is masked to highlight the content. 
+The user information and update form also use borders to frame the content. 
+This can separate the content from the background image so 
+that users will not be confused and the page can also look simple and clear.*/
+
+:root {
+    --pink: #8d6262; /* Primary pink color for the theme */
+    --dark-bg: #333; /* Dark background color */
+    --light-bg: #fff; /* Light background color */
+    --text-color: #333; /* Primary text color */
+    --text-secondary: #999; /* Secondary text color */
+}
+
+/* Global reset and font settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Verdana, Geneva, Tahoma, sans-serif;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+/* Base HTML settings */
+html {
+    font-size: 62.5%; 
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+}
+
+/* General styles for the page */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+	padding-top: 7rem;
+}
+
+body::before {
+    /* Apply a background image with a dark overlay across the entire body */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 110%;
+    background: url('../style/banner/background3.png') no-repeat center center fixed; /* Background image path */
+    background-size: cover;
+    z-index: -1; /* Ensure the background stays behind other content */
+    opacity: 0.6; /* Dim the background for better contrast with text */
+    background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent black overlay */
+}
+
+/* General layout for the profile and order sections */
+.profile-order-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for the user profile section */
+.profile-info {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+}
+
+.profile-info h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.profile-info img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid #333;
+}
+
+.profile-info p {
+    font-size: 18px;
+    color: #555;
+    margin: 15px 0;
+    font-weight: thin;
+}
+
+.profile-info h2 {
+	font-size: 2rem;
+	margin-top: 3rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.profile-info form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.profile-info form input[type="text"],
+.profile-info form input[type="email"],
+.profile-info form input[type="file"] {
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+.profile-info form input[type="submit"] {
+    background-color: var(--pink);
+    color: #fff;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.profile-info form input[type="submit"]:hover {
+    background-color: #555;
+}
+
+/* Divider between profile and orders */
+.divider {
+    width: 2px;
+    background-color: #ddd;
+    margin: 0 20px;
+}
+
+/* Styles for the purchase history section */
+.purchase-history {
+    flex: 2;
+    padding: 20px;
+}
+
+.purchase-history h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.purchase-history table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.purchase-history table th,
+.purchase-history table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.purchase-history table th {
+    background-color: var(--pink);
+    color: #fff;
+    font-weight: normal;
+}
+
+.purchase-history table tr:hover {
+    background-color: #f9f9f9;
+}
+
+.purchase-history table a {
+    color: var(--pink);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.purchase-history table a:hover {
+    color: #333;
+    text-decoration: underline;
+}

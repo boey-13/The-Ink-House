@@ -1,0 +1,31 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# PHP
+*.log
+*.cache
+vendor/
+composer.lock
+
+# Temporary files
+*.tmp
+*.bak
+*.orig
+
+# User uploads (if you don't want to track user-generated content)
+# Uncomment if needed:
+# userprofile/upload/*
+
+# Sensitive configuration (optional - uncomment if you create separate config files)
+# config/production.php
+# .env
+

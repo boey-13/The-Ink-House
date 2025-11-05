@@ -1,0 +1,316 @@
+/*This part of CSS is the CSS of all item categories. It embeds the title into the banner image, 
+frames different items, and adds hover effects to increase the user's visual sense and experience.*/
+
+:root {
+    --pink: #8d6262;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Verdana, Geneva, Tahoma, sans-serif;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+}
+
+body {
+    padding-top: 0; 
+}
+
+section {
+    padding: 2rem 9%;
+}
+
+.heading {
+    text-align: center;
+    font-size: 4rem;
+    color: #333;
+    padding: 1rem;
+    margin: 2rem 0;
+    background: rgba(250, 227, 217, .3);
+}
+
+.heading span {
+    color: var(--pink);
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    background: #333;
+    color: #fff;
+    padding: .9rem 3.5rem;
+    cursor: pointer;
+    font-size: 1.7rem;
+}
+
+.btn:hover {
+    background: var(--pink);
+}
+
+.nbanner {
+    display: flex;
+    align-items: center;
+    min-height: 50vh;
+    background: url(../style/banner/notebook.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    margin-top: 7rem; 
+}
+
+.nbanner .content {
+    text-align: center;
+}
+
+.nbanner .content h3 {
+	font-family: "Playfair Display", serif;
+    font-size: 4.5rem;
+    color: #fff;
+}
+
+.nbanner .content p {
+	font-family: 'Montserrat';
+    font-size: 1.5rem;
+    color: #fff;
+    padding: 1.5rem 0;
+    line-height: 1.5;
+}
+
+.pcbanner {
+    display: flex;
+    align-items: center;
+    min-height: 50vh;
+    background: url(../style/banner/pencilcase.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    margin-top: 7rem; 
+}
+
+.pcbanner .content {
+    text-align: center;
+}
+
+.pcbanner .content h3 {
+	font-family: "Playfair Display", serif;
+    font-size: 4.5rem;
+    color: #fff;
+}
+
+.pcbanner .content p {
+	font-family: 'Montserrat';
+    font-size: 1.5rem;
+    color: #fff;
+    padding: 1.5rem 0;
+    line-height: 1.5;
+}
+
+.pbanner {
+    display: flex;
+    align-items: center;
+    min-height: 50vh;
+    background: url(../style/banner/pen.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    margin-top: 7rem; 
+}
+
+.pbanner .content {
+    text-align: center;
+}
+
+.pbanner .content h3 {
+	font-family: "Playfair Display", serif;
+    font-size: 4.5rem;
+    color: #fff;
+}
+
+.pbanner .content p {
+	font-family: 'Montserrat';
+    font-size: 1.5rem;
+    color: #fff;
+    padding: 1.5rem 0;
+    line-height: 1.5;
+}
+
+.sbanner {
+    display: flex;
+    align-items: center;
+    min-height: 50vh;
+    background: url(../style/banner/sticker.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    margin-top: 7rem; 
+}
+
+.sbanner .content {
+    text-align: center;
+}
+
+.sbanner .content h3 {
+	font-family: "Playfair Display", serif;
+    font-size: 4.5rem;
+    color: #fff;
+}
+
+.sbanner .content p {
+	font-family: 'Montserrat';
+    font-size: 1.5rem;
+    color: #fff;
+    padding: 1.5rem 0;
+    line-height: 1.5;
+}
+
+.tbanner {
+    display: flex;
+    align-items: center;
+    min-height: 50vh;
+    background: url(../style/banner/tape.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    margin-top: 7rem; 
+}
+
+.tbanner .content {
+    text-align: center;
+}
+
+.tbanner .content h3 {
+	font-family: "Playfair Display", serif;
+    font-size: 4.5rem;
+    color: #fff;
+}
+
+.tbanner .content p {
+	font-family: 'Montserrat';
+    font-size: 1.5rem;
+    color: #fff;
+    padding: 1.5rem 0;
+    line-height: 1.5;
+}
+
+/* Container for product categories */
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Grid layout for product items */
+.item-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.img-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.img-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.hover-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.img-container:hover .main-img {
+    opacity: 0;
+}
+
+.img-container:hover .hover-img {
+    opacity: 1;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(135deg, #ffffff, #fffff);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    text-align: center;
+    transition: all 0.4s ease;
+    border: 1.5px solid #ddd;
+}
+
+.item .hover:hover{
+	text-decoration: underline;
+}
+
+.item img:hover {
+    transform: scale(1.02);
+    border-color: var(--pink);
+}
+
+
+.item h3 {
+	font-family: 'Montserrat';
+    font-size: 17px; 
+    margin: 15px 0;
+    color: #333; 
+    font-weight: 600; 
+    letter-spacing: 0.5px; 
+}
+
+.item h3:hover {
+	text-decoration: underline;
+}
+
+.item p {
+    color: #555; 
+    font-size: 12px;
+    margin-bottom: 10px; 
+    line-height: 1.6; 
+}
+
+.item .price {
+	font-family: 'Montserrat';
+    color: #8d6262;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-style: normal;
+    margin-top: auto; 
+    padding-top: 10px;
+}
+
+
+
+
+
